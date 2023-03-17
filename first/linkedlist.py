@@ -63,23 +63,13 @@ class LinkedList:
         self.tail = None
 
     def len(self):
-        return 0
+        list_len = 0
+        node = self.head
+        
+        while node is not None:
+            list_len += 1
+            node = node.next
+        return list_len
 
     def insert(self, afterNode, newNode):
         pass
-
-
-if __name__ == "__main__":
-    n1 = Node(12)
-    n2 = Node(55)
-    n1.next = n2
-    s_list = LinkedList()
-    # s_list.add_in_tail(n1)
-    s_list.add_in_tail(Node(55))
-    s_list.add_in_tail(n2)
-    s_list.add_in_tail(Node(128))
-    s_list.add_in_tail(Node(55))
-    s_list.add_in_tail(Node(11))
-    s_list.print_all_nodes()
-    print('----')
-    print(s_list.find_all(55))
