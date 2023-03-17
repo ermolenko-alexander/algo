@@ -77,6 +77,8 @@ class LinkedList:
         if afterNode is None:
             newNode.next = self.head
             self.head = newNode
+        elif afterNode is self.tail:
+            self.add_in_tail(newNode)
         else:
             while curr is not None:
                 if curr is afterNode:
