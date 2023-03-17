@@ -50,6 +50,8 @@ class LinkedList:
             if curr.value == val:
                 if self.head is curr:
                     self.head = curr.next
+                elif self.tail is curr:
+                    self.tail = pre
                 else:
                     pre.next = curr.next
                 if not all:
