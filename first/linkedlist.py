@@ -52,10 +52,28 @@ class LinkedList:
             curr = curr.next
 
     def clean(self):
-        pass
+        self.head = None
+        self.tail = None
 
     def len(self):
         return 0
 
     def insert(self, afterNode, newNode):
         pass
+
+
+if __name__ == "__main__":
+    n1 = Node(12)
+    n2 = Node(55)
+    n1.next = n2
+    s_list = LinkedList()
+    # s_list.add_in_tail(n1)
+    s_list.add_in_tail(Node(55))
+    s_list.add_in_tail(n2)
+    s_list.add_in_tail(Node(128))
+    s_list.add_in_tail(Node(55))
+    s_list.add_in_tail(Node(11))
+    s_list.print_all_nodes()
+    print('----')
+    s_list.find_all(55)
+    s_list.print_all_nodes()
