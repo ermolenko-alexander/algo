@@ -65,11 +65,21 @@ class LinkedList:
     def len(self):
         list_len = 0
         node = self.head
-        
+
         while node is not None:
             list_len += 1
             node = node.next
         return list_len
 
     def insert(self, afterNode, newNode):
-        pass
+        curr = self.head
+
+        if afterNode is None:
+            self.head = newNode
+        else:
+            while curr is not None:
+                if curr is afterNode:
+                    newNode.next = curr.next
+                    curr.next = newNode
+                    break
+                curr = curr.next
