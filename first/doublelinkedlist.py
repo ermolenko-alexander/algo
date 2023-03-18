@@ -72,7 +72,8 @@ class LinkedList2:
             self.tail = None
 
     def clean(self):
-        pass
+        self.head = None
+        self.tail = None
 
     def len(self):
         return 0
