@@ -95,26 +95,4 @@ class LinkedList:
                     curr.next = newNode
                     break
                 curr = curr.next
-
-
-if __name__ == "__main__":
-    n1 = Node(55)
-    n2 = Node(55)
-    n3 = Node(128)
-    n4 = Node(55)
-    n5 = Node(11)
-    #n1.next = n2
-    s_list = LinkedList()
-    s_list.add_in_tail(n1)
-    #s_list.add_in_tail(n1)
-    #s_list.add_in_tail(n2)
-    #s_list.add_in_tail(n3)
-    #s_list.add_in_tail(n4)
-    #s_list.add_in_tail(n5)
-    s_list.print_all_nodes()
-    print('----')
-    s_list.delete(55, all=False)
-    #n6 = Node(6)
-    #s_list.insert(None, n6)
-    #s_list.insert(n5, Node(7))
-    s_list.print_all_nodes()
+          
