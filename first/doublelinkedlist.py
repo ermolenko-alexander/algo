@@ -29,7 +29,13 @@ class LinkedList2:
         return None
 
     def find_all(self, val):
-        return []
+        curr = self.head
+        list_values = list()
+        while curr is not None:
+            if curr.value == val:
+                list_values.append(curr)
+            curr = curr.next
+        return list_values
 
     def delete(self, val, all=False):
         pass
