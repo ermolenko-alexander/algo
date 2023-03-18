@@ -81,4 +81,12 @@ class LinkedList2:
         pass
 
     def add_in_head(self, newNode):
-        pass
+        if self.head is None:
+            self.head = newNode
+            self.tail = newNode
+            newNode.prev = None
+            newNode.next = None
+        else:
+            newNode.next = self.head
+            self.head.prev = newNode
+            self.head = newNode
