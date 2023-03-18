@@ -43,25 +43,29 @@ class LinkedList:
         return val_nodes
 
     def delete(self, val, all=False):
-        pre = None
         curr = self.head
+        pre = None
 
         while curr is not None:
-            if curr.value == val:
-                if self.head is curr and self.tail is curr:
-                    self.head = None
-                    self.tail = None
-                elif self.head is curr:
-                    self.head = curr.next
-                elif self.tail is curr:
-                    self.tail = pre
-                else:
-                    pre.next = curr.next
-                if not all:
-                    break
-            else:
+            if curr.value != val:
                 pre = curr
-            curr = curr.next
+                curr = curr.next
+            else:
+                if curr == self.head:
+                    self.head = curr.next
+                    curr = self.head
+                    if not all:
+                        break
+                elif curr != self.tail:
+                    pre.next = curr.next
+                    curr = pre
+                    if not all:
+                        break
+                elif curr == self.tail:
+                    self.tail = pre
+
+        if self.head is None:
+            self.tail = None
 
     def clean(self):
         self.head = None
@@ -86,13 +90,12 @@ class LinkedList:
             else:
                 newNode.next = self.head
                 self.head = newNode
-        elif afterNode is self.tail:
+        elif afterNode == self.tail:
             self.add_in_tail(newNode)
         else:
             while curr is not None:
-                if curr is afterNode:
+                if curr == afterNode:
                     newNode.next = curr.next
                     curr.next = newNode
                     break
                 curr = curr.next
-          
