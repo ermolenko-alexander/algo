@@ -21,7 +21,7 @@ def expression(input_str):
             stack2.push(a + b)
         elif curr == '-':
             a, b = get_elements(stack2)
-            stack2.push(a - b)
+            stack2.push(-a + b)
         elif curr == '*':
             a, b = get_elements(stack2)
             stack2.push(a * b)
