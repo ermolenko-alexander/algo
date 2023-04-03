@@ -6,6 +6,7 @@ def get_elements(stack2):
     b = stack2.pop()
     return a, b
 
+
 def expression(input_str):
     stack1 = Stack()
     stack2 = Stack()
@@ -27,7 +28,7 @@ def expression(input_str):
             stack2.push(a * b)
         elif curr == '/':
             a, b = get_elements(stack2)
-            stack2.push(a / b)
+            stack2.push(b / a)
         elif curr == '=':
             stack2.push(stack2.pop())
         else:
