@@ -1,6 +1,12 @@
 from stack import *
 
 
+def get_elements(stack2):
+    a = stack2.pop()
+    b = stack2.pop()
+    return a, b
+
+
 def expression(input_str):
     stack1 = Stack()
     stack2 = Stack()
@@ -12,11 +18,17 @@ def expression(input_str):
         if curr.isdigit():
             stack2.push(int(curr))
         elif curr == '+':
-            stack2.push(stack2.pop() + stack2.pop())
+            a, b = get_elements(stack2)
+            stack2.push(a + b)
         elif curr == '-':
-            stack2.push(stack2.pop() - stack2.pop())
+            a, b = get_elements(stack2)
+            stack2.push(-a + b)
         elif curr == '*':
-            stack2.push(stack2.pop() * stack2.pop())
+            a, b = get_elements(stack2)
+            stack2.push(a * b)
+        elif curr == '/':
+            a, b = get_elements(stack2)
+            stack2.push(b / a)
         elif curr == '=':
             stack2.push(stack2.pop())
         else:
