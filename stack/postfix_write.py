@@ -25,6 +25,9 @@ def expression(input_str):
         elif curr == '*':
             a, b = get_elements(stack2)
             stack2.push(a * b)
+        elif curr == '/':
+            a, b = get_elements(stack2)
+            stack2.push(a / b)
         elif curr == '=':
             stack2.push(stack2.pop())
         else:
