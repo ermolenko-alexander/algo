@@ -23,4 +23,3 @@ class BloomFilter:
     def is_value(self, str1):
         res = self.hash1(str1) + self.hash2(str1)
         return self.filter & res == res
-d:
